@@ -1,0 +1,27 @@
+PÁGINA ACADÉMICA — Dr. Lindolfo Paul Mallqui Espinoza
+
+VERSIÓN PRELIMINAR: NO PUBLICADA.
+
+1. Abra index.html con Chrome, Edge o Firefox para ver el sitio.
+2. Para cambiar los textos de las páginas, abra content.js con un editor de texto.
+3. Para modificar su nombre, cargo o afiliación de la portada, edite index.html.
+4. Para modificar colores, tipografía y disposición, edite styles.css.
+5. Para añadir su fotografía REAL: copie una foto vertical a la carpeta assets
+   con el nombre foto-perfil.jpg y cambie en content.js:
+       usePortrait: false
+   por:
+       usePortrait: true
+6. Para sustituir el fondo matemático, reemplace assets/mathematics-banner.png
+   por otra imagen con el mismo nombre.
+7. Para publicar gratis posteriormente, se puede subir esta carpeta a GitHub Pages.
+   NO se ha creado ningún repositorio ni publicado ningún archivo.
+
+La navegación utiliza anclas #inicio, #perfil, #investigacion, #publicaciones,
+#docencia y #actividades. Funciona sin conexión a internet; los enlaces a
+revistas y arXiv sí requieren conexión.
+
+REVISAR ANTES DE PUBLICAR:
+- Añadir fotografía auténtica.
+- Verificar y ajustar todas las descripciones y datos institucionales.
+- Incorporar enlaces de contacto si así se desea.
+- Probar en móvil y escritorio.

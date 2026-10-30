@@ -1,0 +1,773 @@
+
+:root {
+  --navy: #0b1d32;
+  --navy2: #102c4c;
+  --ink: #14243a;
+  --muted: #607185;
+  --blue: #1677dc;
+  --line: #e2e9f1;
+  --bg: #f7f9fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font: 16px/1.7 'Segoe UI', Inter, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+a {
+  color: #0766bf;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #49b3ff;
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: #fff;
+  z-index: 1000;
+  padding: 8px;
+}
+
+.skip:focus {
+  top: 10px;
+}
+
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 246px;
+  background: linear-gradient(165deg, #142941, #0b1b30 80%);
+  color: #fff;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 18px;
+  box-shadow: 8px 0 35px #06101c1a;
+}
+
+.brand {
+  padding: 0 12px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand-monogram {
+  display: block;
+  font-size: 30px;
+  line-height: 1.24;
+  font-weight: 760;
+  letter-spacing: -.8px;
+}
+
+.brand-sub {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2.1px;
+  color: #b5d3ed;
+  margin-top: 10px;
+}
+
+.brand-rule {
+  height: 1px;
+  background: #35526b;
+  margin: 32px 12px 18px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 5px;
+}
+
+.sidebar nav a {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  text-decoration: none;
+  color: #d8e6f5;
+  padding: 11px 14px;
+  border-radius: 9px;
+  font-size: 14px;
+  transition: .2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #1a4a7c;
+  color: #fff;
+}
+
+.sidebar nav a.active {
+  box-shadow: inset 3px 0 #5db9ff;
+}
+
+.nav-icon {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  width: 25px;
+  text-align: center;
+  line-height: 1;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 11px;
+  color: #91aac4;
+  padding: 20px 12px 0;
+}
+
+.page-wrap {
+  margin-left: 246px;
+  width: calc(100% - 246px);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  height: 405px;
+  position: relative;
+  background: #062148 url('assets/mathematics-banner.png') center 56%/cover no-repeat;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(3,21,45,.84),
+    rgba(4,25,55,.5) 50%,
+    rgba(4,25,55,.12)
+  );
+}
+
+.hero-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 42px clamp(30px,5vw,90px);
+}
+
+.hero-copy {
+  max-width: 690px;
+  text-shadow: 0 2px 14px #00152b88;
+}
+
+.eyebrow,
+.section-kicker {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 2.5px;
+}
+
+.eyebrow {
+  color: #b9e0ff;
+  margin: 0 0 13px;
+}
+
+.hero h1 {
+  font-size: clamp(30px,3.15vw,49px);
+  line-height: 1.15;
+  letter-spacing: -1.3px;
+  margin: 0 0 20px;
+  font-weight: 760;
+}
+
+.hero-degree {
+  font-size: clamp(16px,1.5vw,20px);
+  font-weight: 550;
+  margin: 0 0 5px;
+}
+
+.hero-detail {
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0 0 5px;
+  max-width: 480px;
+}
+
+.hero-affiliation {
+  color: #d1e5f9;
+  margin: 0;
+  font-size: 14px;
+}
+
+.portrait {
+  flex: 0 0 clamp(140px,17vw,208px);
+  height: clamp(172px,20vw,248px);
+
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+align-self: flex-end;
+margin-bottom: -42px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 75% 75% at center,
+    black 45%,
+    transparent 100%
+  );
+
+  mask-image: radial-gradient(
+    ellipse 75% 75% at center,
+    black 45%,
+    transparent 100%
+  );
+}
+
+.portrait-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: #c7ddf1;
+}
+
+.portrait-placeholder svg {
+  width: 72px;
+  height: 72px;
+}
+
+.portrait-placeholder span {
+  font-size: 11px;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+main {
+  width: min(1050px,100%);
+  margin: 0 auto;
+  padding: 45px clamp(28px,5vw,75px) 85px;
+  flex: 1;
+}
+
+.section {
+  padding: 8px 0 34px;
+  margin-bottom: 27px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section:last-child {
+  border-bottom: 0;
+}
+
+.section-kicker {
+  color: #0872cb;
+  margin: 0 0 7px;
+}
+
+.section h2 {
+  font-size: clamp(24px,2.2vw,32px);
+  letter-spacing: -.7px;
+  line-height: 1.25;
+  color: #102640;
+  margin: 0 0 20px;
+}
+
+.section h2:after {
+  content: "";
+  display: block;
+  width: 47px;
+  height: 4px;
+  background: var(--blue);
+  border-radius: 4px;
+  margin-top: 11px;
+}
+
+.section h3 {
+  font-size: 19px;
+  line-height: 1.4;
+  margin: 12px 0;
+}
+
+.section p {
+  margin: 0 0 15px;
+}
+
+.lead {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #35495f;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 17px;
+  margin: 8px 0 44px;
+}
+
+.feature {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: 0 6px 25px #17365b0a;
+  transition: transform .2s,box-shadow .2s;
+}
+
+.feature:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px #17365b19;
+}
+
+.feature-icon {
+  font: 38px Georgia,serif;
+  color: var(--blue);
+}
+
+.feature h3 {
+  margin: 7px 0 5px;
+  font-size: 18px;
+}
+
+.feature p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.feature-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0769c5;
+}
+
+.timeline {
+  border-left: 2px solid #b8d7f4;
+  margin: 15px 0 0 11px;
+  padding-left: 24px;
+}
+
+.timeline>div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 0 0 22px;
+}
+
+.timeline>div:before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1684e9;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #b8d7f4;
+}
+
+.timeline strong {
+  font-size: 15px;
+}
+
+.timeline span,
+.muted {
+  color: var(--muted);
+}
+
+.entry {
+  padding: 10px 0 16px;
+}
+
+.entry h3 {
+  margin: 0 0 5px;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.topic {
+  background: #edf5fd;
+  border-left: 3px solid #1885e8;
+  padding: 14px 18px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.publication {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 8px 30px #1a39570c;
+}
+
+.publication h3 {
+  font-size: 20px;
+  margin: 9px 0 17px;
+}
+
+.pub-year {
+  font-size: 11px;
+  font-weight: 800;
+  color: #0068c7;
+  letter-spacing: 1.3px;
+}
+
+.link-row {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+.link-row a {
+  background: #eaf4ff;
+  padding: 8px 13px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.note {
+  font-size: 13px;
+  margin-top: 15px!important;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 35px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+@media(max-width:1020px) {
+  .sidebar {
+    width: 208px;
+  }
+
+  .page-wrap {
+    margin-left: 208px;
+    width: calc(100% - 208px);
+  }
+
+  .hero-content {
+    padding: 30px;
+  }
+
+  .portrait {
+    flex-basis: 140px;
+    height: 180px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width:700px) {
+  .mobile-toggle {
+    position: fixed;
+    z-index: 80;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #0d2847;
+    color: #fff;
+    border: 1px solid #ffffff50;
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-size: 14px;
+    box-shadow: 0 5px 20px #00162955;
+  }
+
+  .sidebar {
+    transform: translateX(-105%);
+    transition: transform .25s;
+    width: 255px;
+    padding-top: 65px;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .overlay:not([hidden]) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 40;
+  }
+
+  .page-wrap {
+    margin: 0;
+    width: 100%;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 525px;
+  }
+
+  .hero-content {
+    padding: 76px 24px 35px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(29px,8vw,40px);
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .portrait {
+    flex: none;
+    width: 118px;
+    height: 137px;
+    align-self: flex-end;
+  }
+
+  .portrait-placeholder svg {
+    width: 43px;
+    height: 43px;
+  }
+
+  .portrait-placeholder span {
+    font-size: 9px;
+  }
+
+  .hero-detail {
+    font-size: 14px;
+  }
+
+  .hero-degree {
+    font-size: 16px;
+  }
+
+  main {
+    padding: 32px 22px 55px;
+  }
+
+  .feature-grid,
+  .topic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    padding: 20px 22px;
+  }
+
+  .section h2 {
+    font-size: 25px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,
+  *:before,
+  *:after {
+    scroll-behavior: auto!important;
+    transition: none!important;
+  }
+}
+
+/* ==================================================
+   TARJETAS INTERACTIVAS DE CURSOS
+   ================================================== */
+
+.course-card {
+  margin: 14px 0;
+  border: 1px solid #d7e3f1;
+  border-left: 4px solid #1876d2;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(10, 35, 65, 0.05);
+}
+
+.course-card summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #102b4a;
+  list-style: none;
+  transition: background 0.2s ease;
+}
+
+.course-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.course-card summary:hover {
+  background: #eaf3fd;
+}
+
+.course-card summary:focus-visible {
+  outline: 3px solid #1876d2;
+  outline-offset: -3px;
+}
+
+.course-action {
+  color: #1673c5;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+.course-card[open] {
+  background: #f8fbff;
+}
+
+.course-card[open] summary {
+  border-bottom: 1px solid #d7e3f1;
+}
+
+.course-card > :not(summary) {
+  margin-left: 22px;
+  margin-right: 22px;
+}
+
+.course-card > :last-child {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .course-card summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================
+   RECURSOS ACADÉMICOS - LISTA DE PDF
+   ========================================== */
+
+.pdf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.pdf-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1px solid #dce5ef;
+  border-radius: 10px;
+}
+
+.pdf-title {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+  color: #17345b;
+}
+
+.pdf-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.pdf-actions button,
+.pdf-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid #cbd9e8;
+  border-radius: 7px;
+  background: #f1f6fc;
+  color: #1264b0;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pdf-actions button:hover,
+.pdf-actions a:hover {
+  background: #dcecff;
+}
+
+@media (max-width: 600px) {
+  .pdf-item {
+    flex-wrap: wrap;
+  }
+
+  .pdf-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
