@@ -1,4 +1,3 @@
-
 /* ============================================================
    ADMINISTRACIÓN DE MATERIALES PDF
    ============================================================
@@ -479,6 +478,36 @@ const SITE = {
           <div class="topic">
             Periodo 2026-2 — Cursos y materiales
           </div>
+        </div>
+                <!-- LABORATORIO -->
+        <h3>Laboratorio</h3>
+
+        <div class="topic-grid">
+
+          <div class="topic">
+            <h4 style="font-size: 21px; margin-bottom: 12px;">Python</h4>
+            <p>
+              Laboratorios interactivos desarrollados
+              en Python para la visualización y el
+              análisis matemático.
+            </p>
+            <a href="laboratorios/python.html">
+              Acceder al laboratorio Python →
+            </a>
+          </div>
+
+          <div class="topic">
+            <h4 style="font-size: 21px; margin-bottom: 12px;">GeoGebra</h4>
+            <p>
+              Construcciones dinámicas para explorar
+              conceptos matemáticos mediante
+              representaciones gráficas interactivas.
+            </p>
+            <a href="laboratorios/geogebra.html">
+              Acceder al laboratorio GeoGebra →
+            </a>
+          </div>
+
         </div>
       </section>
     `,
