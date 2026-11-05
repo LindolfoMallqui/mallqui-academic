@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Laboratorio GeoGebra | L. P. Mallqui</title>
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f5f7fb;
+      color: #142b45;
+      font-family: Arial, sans-serif;
+    }
+
+    .lab-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 24px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+      color: #176bc0;
+      text-decoration: none;
+    }
+
+    .lab-header h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .lab-header p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #52657b;
+    }
+
+    .lab-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px 0;
+    }
+
+    .lab-search,
+    .lab-filter {
+      padding: 12px;
+      border: 1px solid #ccd8e5;
+      border-radius: 8px;
+      font-size: 15px;
+      background: white;
+      color: #142b45;
+    }
+
+    .lab-search {
+      flex: 2;
+      min-width: 220px;
+    }
+
+    .lab-filter {
+      flex: 1;
+      min-width: 190px;
+    }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .lab-card {
+      background: white;
+      border: 1px solid #dce5ef;
+      border-left: 4px solid #1878d4;
+      border-radius: 12px;
+      padding: 26px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.04);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lab-card h2 {
+      font-size: 21px;
+      margin: 10px 0;
+    }
+
+    .lab-card p {
+      color: #52657b;
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
+    .lab-category {
+      color: #176bc0;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .lab-link {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 11px 18px;
+      border-radius: 7px;
+      background: #176bc0;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .lab-link:hover {
+      background: #104f91;
+    }
+
+    .lab-footer {
+      margin-top: 35px;
+    }
+
+    .empty-message {
+      display: none;
+      padding: 24px;
+      text-align: center;
+      color: #52657b;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="lab-container">
+
+    <a class="back-link" href="../index.html#docencia">
+      ← Volver a Docencia
+    </a>
+
+    <header class="lab-header">
+      <h1>Laboratorio GeoGebra</h1>
+      <p>
+        Explora construcciones matemáticas interactivas
+        desarrolladas en GeoGebra. Selecciona un proyecto,
+        modifica sus parámetros y analiza gráficamente
+        los resultados.
+      </p>
+    </header>
+
+    <div class="lab-toolbar">
+      <input
+        id="buscador"
+        class="lab-search"
+        type="search"
+        placeholder="Buscar un laboratorio..."
+        aria-label="Buscar laboratorio"
+      >
+
+      <select
+        id="filtro"
+        class="lab-filter"
+        aria-label="Filtrar por área matemática"
+      >
+        <option value="todos">Todas las áreas</option>
+        <option value="edo">Ecuaciones diferenciales</option>
+        <option value="multivariable">Cálculo multivariable</option>
+        <option value="integral">Cálculo integral</option>
+      </select>
+    </div>
+
+    <section class="lab-grid" id="catalogo">
+
+      <article class="lab-card" data-area="edo">
+        <span class="lab-category">
+          Ecuaciones diferenciales
+        </span>
+        <h2>EDO de primer orden</h2>
+        <p>
+          Visualiza campos de direcciones y soluciones
+          de ecuaciones diferenciales de primer orden.
+          Explora el comportamiento de las soluciones
+          al modificar sus parámetros.
+        </p>
+        <a class="lab-link"
+           href="https://www.geogebra.org/m/wktvsaec"
+           target="_blank" rel="noopener noreferrer">
+          Explorar construcción →
+        </a>
+      </article>
+
+      <article class="lab-card" data-area="multivariable">
+        <span class="lab-category">
+          Cálculo multivariable
+        </span>
+        <h2>Plano tangente a una superficie</h2>
+        <p>
+          Explora superficies tridimensionales y
+          sus planos tangentes mediante la
+          modificación del punto de tangencia.
+        </p>
+        <a class="lab-link"
+           href="https://www.geogebra.org/m/aaab6ac6"
+           target="_blank" rel="noopener noreferrer">
+          Explorar construcción →
+        </a>
+      </article>
+
+      <article class="lab-card" data-area="integral">
+        <span class="lab-category">
+          Cálculo integral
+        </span>
+        <h2>Área entre dos curvas</h2>
+        <p>
+          Visualiza regiones delimitadas por
+          funciones y estudia el cálculo de
+          áreas mediante integrales definidas.
+        </p>
+        <a class="lab-link"
+           href="https://www.geogebra.org/m/dqxhdb4z"
+           target="_blank" rel="noopener noreferrer">
+          Explorar construcción →
+        </a>
+      </article>
+
+      <article class="lab-card" data-area="integral">
+        <span class="lab-category">
+          Cálculo integral
+        </span>
+        <h2>Volúmenes de revolución: método de anillos</h2>
+        <p>
+          Explora sólidos de revolución generados
+          por regiones planas y analiza el
+          cálculo de volúmenes mediante
+          el método de anillos.
+        </p>
+        <a class="lab-link"
+           href="https://www.geogebra.org/m/a2py4pbp"
+           target="_blank" rel="noopener noreferrer">
+          Explorar construcción →
+        </a>
+      </article>
+
+      <article class="lab-card" data-area="integral">
+        <span class="lab-category">
+          Cálculo integral
+        </span>
+        <h2>Área de superficies de revolución</h2>
+        <p>
+          Investiga las superficies generadas
+          al girar una curva alrededor del eje x
+          y su relación con el cálculo integral.
+        </p>
+        <a class="lab-link"
+           href="https://www.geogebra.org/m/vhj2jduk"
+           target="_blank" rel="noopener noreferrer">
+          Explorar construcción →
+        </a>
+      </article>
+
+    </section>
+
+    <p id="sin-resultados" class="empty-message">
+      No se encontraron laboratorios con esos criterios.
+    </p>
+
+    <footer class="lab-footer">
+      <a href="https://www.geogebra.org/u/lindolfomallqui"
+         target="_blank" rel="noopener noreferrer"
+         class="back-link">
+        Ver perfil público de GeoGebra →
+      </a>
+    </footer>
+
+  </main>
+
+  <script>
+    const buscador = document.getElementById("buscador");
+    const filtro = document.getElementById("filtro");
+    const tarjetas = document.querySelectorAll(".lab-card");
+    const mensaje = document.getElementById("sin-resultados");
+
+    function filtrarLaboratorios() {
+      const texto = buscador.value.toLocaleLowerCase("es").trim();
+      const area = filtro.value;
+      let visibles = 0;
+
+      tarjetas.forEach(tarjeta => {
+        const coincideTexto = tarjeta.textContent
+          .toLocaleLowerCase("es")
+          .includes(texto);
+
+        const coincideArea =
+          area === "todos" ||
+          tarjeta.dataset.area === area;
+
+        const mostrar = coincideTexto && coincideArea;
+        tarjeta.hidden = !mostrar;
+        tarjeta.style.display = mostrar ? "" : "none";
+
+        if (mostrar) visibles++;
+      });
+
+      mensaje.style.display = visibles === 0 ? "block" : "none";
+    }
+
+    buscador.addEventListener("input", filtrarLaboratorios);
+    filtro.addEventListener("change", filtrarLaboratorios);
+  </script>
+
+</body>
+</html>
